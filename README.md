@@ -23,41 +23,40 @@ To get started with this project, clone the repository and install the necessary
 
 Clone the repository:
 
-bash
-Copy
-Edit
+
 git clone https://github.com/yourusername/project_rag_openai_qa.git
+
+
 Navigate into the project directory:
 
-bash
-Copy
-Edit
 cd project_rag_openai_qa
+
 Install the dependencies:
 
-bash
-Copy
-Edit
+
 pip install -q langchain langchain-openai langchain-core langchain_community docx2txt pypdf langchain_chroma sentence_transformers
+
 You will also need to set up environment variables for the OpenAI API key and Langchain API key.
 
-bash
-Copy
-Edit
-export OPENAI_API_KEY="your_open_ai_api_key"
-export LANGCHAIN_API_KEY="your_langchain_api_key"
-export LANGCHAIN_PROJECT="PROJECT_RAG_OPENAI_QA"
+
+OPENAI_API_KEY="your_open_ai_api_key"
+
+LANGCHAIN_API_KEY="your_langchain_api_key"
+
+LANGCHAIN_PROJECT="PROJECT_RAG_OPENAI_QA"
+
 Project Setup
+
 1. API Setup
 The system utilizes the OpenAI API to access the GPT-4 model and LangChain to structure and manage prompt templates and embeddings.
 
 2. Document Loaders
 The project supports loading .pdf and .docx files using the PyPDFLoader and Docx2txtLoader from LangChain.
 
-3. Text Splitting
+4. Text Splitting
 The documents are split into smaller chunks using the RecursiveCharacterTextSplitter for better document processing and vector embedding.
 
-4. Embedding & Similarity Search
+5. Embedding & Similarity Search
 Text from documents is embedded into vectors using OpenAI embeddings.
 
 A Chroma vector store is used for storing the embedded vectors, allowing for efficient similarity searches.
@@ -100,16 +99,13 @@ Execute the main notebook code (project_rag_openai_qa.ipynb), which will guide y
 Ask questions to the system, and it will return relevant answers based on the documents loaded.
 
 Example:
-python
-Copy
-Edit
+
 question = "What is CAG?"
 response = rag_chain.invoke({"input": question, "chat_history": chat_history})['answer']
 print(f"Answer: {response}")
+
 File Structure
-graphql
-Copy
-Edit
+
 project_rag_openai_qa/
 ├── docs/                    # Folder to store PDF and DOCX files
 ├── rag_chain.py             # The main RAG chain implementation
@@ -117,15 +113,7 @@ project_rag_openai_qa/
 ├── application_logs.db      # SQLite database for logging user interactions
 ├── project_rag_openai_qa.ipynb # Jupyter Notebook to run the code
 └── README.md                # This file
+
 Contributors
-Your Name
+SREE AVINASH B
 
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-Customize the README:
-Replace "yourusername" with your GitHub username.
-
-Ensure that your OPENAI_API_KEY and LANGCHAIN_API_KEY are stored securely.
-
-Add any additional features or configurations specific to your project setup.
