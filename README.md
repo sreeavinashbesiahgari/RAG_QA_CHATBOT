@@ -130,4 +130,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 - OpenAI for the GPT models
 - LangChain for the RAG implementation
-- FastAPI and Streamlit communities 
+- FastAPI and Streamlit communities
